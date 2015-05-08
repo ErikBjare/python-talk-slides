@@ -13,7 +13,7 @@ title: Python Introduction
   </slide>
 
   <slide class="title-slide segue nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <aside class="gdbar"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"></aside>
     <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
@@ -22,20 +22,83 @@ title: Python Introduction
     </hgroup>
   </slide>
 
+  <slide class="segue dark quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <q>
+        I'll begin with a shockingly controversial statement: programming languages vary in power.
+      </q>
+      <div class="author">
+        Paul Graham<br>
+        in <a href="http://paulgraham.com/avg.html">Beating the Averages</a>
+      </div>
+    </article>
+  </slide>
+
   <slide>
     <hgroup>
-      <h2>Slide with Bullets</h2>
+      <h2>Why Python?</h2>
     </hgroup>
     <article>
-      <ul>
-        <li>Titles are formatted as Open Sans with bold applied and font size is set at 45</li>
-        <li>Title capitalization is title case
+      <ul class="build">
+        <li>It's the language I know the best because I loved it since day one (if I do this well enough, I hope you will too)</li>
+        <li>Easy to learn</li>
+        <li>Fast to write</li>
+        <li>Rich (but not overwhelming) set of syntax features</li>
+        <li>Great documentation (nothing like the Java documentation)</li>
+        <li>It makes programming fun (compared to Java)</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Why not Python?</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>You somehow don't like whitespace indentation</li>
+        <li>It's not <i>fast to run</i>
           <ul>
-            <li>Subtitle capitalization is title case</li>
+            <li>But you can implement costly parts in C and <a href="https://docs.python.org/3/extending/extending.html">use them in Python</a></li>
           </ul>
         </li>
-        <li>Subtitle capitalization is title case</li>
-        <li>Titles and subtitles should never have a period at the end</li>
+        <li>You can't write mobile apps with it
+          <ul>
+            <li>Actually <a href="http://kivy.org/">you can</a>, but I wouldn't recommend it for serious projects</li>
+          </ul>
+        </li>
+        <li>It's not statically typed
+          <ul>
+            <li>However, a project working on optional static typing is <a href="http://mypy-lang.org/">under development</a></li>
+          </ul>
+        </li>
+        <li>The Global Interpreter Lock</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Where is it used?</h2>
+    </hgroup>
+    <article>
+      <!-- TODO: Replace with a logo-fest -->
+      <h3>Companies</h3>
+      <ul>
+        <li>Google</li>
+        <li>CERN</li>
+        <li>NASA</li>
+      </ul>
+
+      <h3>Products & Services</h3>
+      <ul>
+        <li>YouTube</li>
+        <li>Dropbox</li>
+        <li>Reddit</li>
+        <li>Duolingo</li>
+        <li>Hipmunk</li>
+        <li>BitTorrent (first implementation)</li>
       </ul>
     </article>
   </slide>
@@ -55,303 +118,219 @@ title: Python Introduction
         <li>Pressing 'o' toggles overview mode</li>
         <li>Pressing 'ESC' toggles off these goodies</li>
       </ul>
-      <p>Another list, but items fade as they build:</p>
-      <ul class="build fade">
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
-      </ul>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Slide with (Smaller Font)</h2>
+      <h2>Hello World!</h2>
     </hgroup>
-    <article class="smaller">
-      <ul>
-        <li>All <a href="http://google.com">links</a> open in new tabs.</li>
-        <li>To change that this, add <code>target="_self"</code> to the link.</li>
-      </ul>
+    <article class="vcenter">
+      <pre class="prettyprint" data-lang="python">print("Hello world!")</pre>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <p>
+      Just for comparison, here is the equivalent Java:
+    </p>
+      <pre class="prettyprint" data-lang="java">
+public class Program {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}</pre>
     </article>
   </slide>
 
-  <slide hidden>
-    Hidden slides are left out of the presentation.
+  <slide class="fill nobackground" style="background: url(https://upload.wikimedia.org/wikipedia/commons/3/34/Double-Rainbow.jpg); background-size: 100% 100%">
+    <hgroup>
+      <h2>Lists</h2>
+    </hgroup>
+    <article class="vcenter">
+      <pre class="prettyprint" data-lang="python">
+our_list = ["rainbow"]
+our_list.append("rainbow")        # What does it mean?
+if len(our_list) != 2:
+    raise Exception("list was of unexpected length")
+if our_list[0] == our_list[1] == "rainbow":
+    print("Double rainbow all across the slide!")</pre>
+
+      <pre data-lang="output">
+Double rainbow all across the slide!</pre>
+    </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Code Slide (with Subtitle Placeholder)</h2>
-      <h3>Subtitle Placeholder</h3>
+      <h2>Lists</h2>
+      <h3>If you mention arrays you will make the snake mad</h3>
+    </hgroup>
+    <article class="vcenter">
+
+      <pre class="prettyprint" data-lang="python">
+primes = [17, 3, 5, 13, 7, 11]
+print(sorted(primes))</pre>
+
+      <pre class="prettyprint" data-lang="python">
+primes = [17, 3, 5, 13, 7, 11]
+primes.sort()
+print(primes)
+</pre>
+
+      <pre data-lang="output">
+[3, 5, 7, 11, 13, 17]</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Strings</h2>
+    </hgroup>
+    <article class="vcenter">
+      <pre class="prettyprint" data-lang="python">
+word = "Narwhal"                      # They are awesome
+part_of_word = word[0:2]              # Can be shortened `word[:2]`
+print(part_of_word*10 + " Batman!")</pre>
+
+      <pre data-lang="output">
+NaNaNaNaNaNaNaNaNaNa Batman!</pre>
+    </article>
+  </slide>
+
+  <!-- TODO: Complete slide -->
+  <slide>
+    <hgroup>
+      <h2>Dictionaries</h2>
+      <h3>Also known as hashmaps</h3>
+    </hgroup>
+    <article class="vcenter">
+      <pre class="prettyprint" data-lang="python">
+our_dictionary = {"some key": "some value"}
+our_dictionary["some key"] = "some other value"</pre>
+
+      <pre data-lang="output">
+This slide is obviously not completed</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Batteries included</h2>
+      <h3>Need something? Python probably has it</h3>
     </hgroup>
     <article>
-      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
-      <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    <b>for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }</b>
-  }
-&lt;/script&gt;
-</pre>
-    </article>
-  </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Code Slide (Smaller Font)</h2>
-    </hgroup>
-    <article class="smaller">
-      <pre class="prettyprint" data-lang="javascript">
-// Say hello world until the user starts questioning
-// the meaningfulness of their existence.
-function helloWorld(world) {
-  for (var i = 42; --i &gt;= 0;) {
-    alert('Hello ' + String(world));
-  }
-}
-</pre>
-<pre class="prettyprint" data-lang="css">
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-&lt;/style&gt;
-</pre>
-<pre class="prettyprint" data-lang="html">
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-  &lt;title>My Awesome Page&lt;/title>
-&lt;/head>
-&lt;body>
-  &lt;p&gt;Hello world&lt;/p&gt;
-&lt;body>
-&lt;/html>
-</pre>
-    </article>
-  </slide>
+      <pre class="prettyprint" data-lang="python">
+import webbrowser
+webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")</pre>
 
-  <slide>
-    <aside class="note">
-      <section>
+      <p>
+        If you run this, the exact same thing will happen as if you click <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">this</a>.
+      </p>
+
+      <p>
+        The Python standard library includes excellent (and easy to use) modules for:
         <ul>
-          <li>Point I wanted to make #1</li>
-          <li>Point I wanted to make #2</li>
-          <li>Point I wanted to make #3</li>
-          <li>Example <a href="#">link</a> in notes.</li>
+          <li>Date and time</li>
+          <li>Functional programming</li>
+          <li>Data compression and archiving</li>
+          <li>Concurrent execution</li>
         </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
+      </p>
+
+      <p>
+        ...and <a href="https://docs.python.org/3/library/">much more</a>.
+      </p>
+
+      <p>
+        ...not enough? A lot more is available from the <a href="https://pypi.python.org/pypi">Python Package Index</a>.
+    </article>
+  </slide>
+
+
+  <!-- TODO: Use this slide? -->
+  <!-- TODO: Split it into several slides -->
+  <slide>
     <hgroup>
-      <h2>Slide with Speaker Notes</h2>
+      <h2>Fibonacci</h2>
     </hgroup>
-    <article>
-      <p>Press 'p' to toggle speaker notes.</p>
+    <article class="vcenter small">
+      <h3>Iterative</h3>
+      <pre class="prettyprint" data-lang="python">
+def fibonacci(n):
+    """Returns the n'th Fibonacci number"""
+    i = 1
+    j = 0
+    for _ in range(n):
+        tmp = i
+        i += j
+        j = tmp + i
+    return i</pre>
+
+
+      <h3>Recursion</h3>
+      <pre class="prettyprint" data-lang="python">
+def fibonacci(n):
+    if n &lt; 2:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)</pre>
+
+      <h3>Print first 10</h3>
+      <pre class="prettyprint" data-lang="python">
+for i in range(10):
+      print(fibonacci(i))</pre>
     </article>
   </slide>
 
   <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>See this amazing link: <a href="http://www.google.com">link</a>.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Presenter Mode</h2>
-    </hgroup>
-    <article>
-      <p>Add <code><a href="?presentme=true" target="_self">?presentme=true</a></code> to the URL to enabled presenter mode.
-      This setting is sticky, meaning refreshing the page will persist presenter
-      mode.</p>
-      <p>Hit <code><a href="?presentme=false" target="_self">?presentme=false</a></code> to disable presenter mode.</p>
+    <article class="flexbox vcenter">
+      <span><img src="https://imgs.xkcd.com/comics/python.png"></span>
     </article>
+    <footer class="source">source: <a href="http://xkcd.com/353/">http://xkcd.com/353/</a></footer>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Slide with Image</h2>
-    </hgroup>
-    <article>
-      <img src="images/chart.png" class="reflect" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide with Image (Centered horz/vert)</h2>
+      <h2>Try this at home</h2>
     </hgroup>
     <article class="flexbox vcenter">
-      <img src="images/barchart.png" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
+<pre class="prettyprint" data-lang="python">import antigravity</pre>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Table Option A</h2>
-      <h3>Subtitle Placeholder</h3>
+      <h2>Want more?</h2>
     </hgroup>
     <article>
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Table Option A (Smaller Text)</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article class="smaller">
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
+      <h3>More about Python</h3>
+      <ul>
+        <li><a href="https://docs.python.org/3/">Python Documentation</a></li>
+        <li><a href="https://docs.python.org/3/tutorial/index.html">The Official Python Tutorial</a></li>
+      </ul>
 
-  <slide>
-    <hgroup>
-      <h2>Table Option B</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table class="rows">
-        <tr>
-          <th>Header 1</th><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 2</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 3</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 4</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 5</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
+      <h3>This talk was influenced by:</h3>
+      <ul>
+        <li><a href="http://paulgraham.com/avg.html">Beating the Averages</a> by Paul Graham</li>
+        <li><a href="https://www.youtube.com/watch?v=mvK0UzFNw1Q">How to Learn to Code</a> by 'Cheers, Kevin' (YouTube)</li>
+      </ul>
 
-  <slide>
-    <hgroup>
-      <h2>Slide Styles</h2>
-    </hgroup>
-    <article class="smaller">
-      <div class="columns-2">
-        <ul>
-          <li class="red">class="red"</li>
-          <li class="red2">class="red2"</li>
-          <li class="red3">class="red3"</li>
-          <li class="blue">class="blue"</li>
-          <li class="blue2">class="blue2"</li>
-          <li class="blue3">class="blue3"</li>
-          <li class="green">class="green"</li>
-          <li class="green2">class="green2"</li>
-        </ul>
-        <ul>
-          <li class="green3">class="green3"</li>
-          <li class="yellow">class="yellow"</li>
-          <li class="yellow2">class="yellow2"</li>
-          <li class="yellow3">class="yellow3"</li>
-          <li class="gray">class="gray"</li>
-          <li class="gray2">class="gray2"</li>
-          <li class="gray3">class="gray3"</li>
-          <li class="gray4">class="gray4"</li>
-        </ul>
-      </div>
-      <div class="centered" style="margin-top:2em">
-        I am centered text with a <button>Button</button> and <button disabled>Disabled</button> button.
-      </div>
-    </article>
-  </slide>
-
-  <slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
-    <hgroup class="auto-fadein">
-      <h2>Segue Slide</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-  </slide>
-
-  <slide class="fill nobackground" style="background-image: url(images/sky.jpg)">
-    <hgroup>
-      <h2 class="white">Full Image (with Optional Header)</h2>
-    </hgroup>
-    <footer class="source white">www.flickr.com/photos/25797459@N06/5438799763/</footer>
-  </slide>
-
-  <slide class="segue dark quote nobackground">
-    <aside class="gdbar right bottom"><img src="images/google_developers_icon_128.png"></aside>
-    <article class="flexbox vleft auto-fadein">
-      <q>
-        This is an example of quote text.
-      </q>
-      <div class="author">
-        Name<br>
-        Company
-      </div>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide with Iframe</h2>
-    </hgroup>
-    <article>
-      <iframe data-src="http://www.google.com/doodle4google/resources/history.html"></iframe>
-    </article>
-  </slide>
-
-  <slide>
-    <article>
-      <iframe data-src="http://www.google.com/doodle4google/resources/history.html"></iframe>
+      <!-- TODO: Move to beginning -->
+      <br>
+      <br>
+      <br>
+      <p>
+        You can open all the links in the online version of the slides at:
+      </p>
+      <p>
+        <a href="http://erikbjare.github.io/python-talk-slides/">erikbjare.github.io/python-talk-slides/</a>
+      </p>
     </article>
   </slide>
 
