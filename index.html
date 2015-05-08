@@ -5,13 +5,6 @@ title: Python Introduction
 
 <slides class="layout-widescreen">
 
-  <slide class="logoslide nobackground">
-    <article class="flexbox vcenter">
-      <h2>No logo</h2>
-      <h3>...yet</h3>
-    </article>
-  </slide>
-
   <slide class="title-slide segue nobackground">
     <aside class="gdbar"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"></aside>
     <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
@@ -20,6 +13,19 @@ title: Python Introduction
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
     </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Why learn more languages?</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>It's fun</li>
+        <li>It will make you a better programmer</li>
+        <li>How many languages you know is <a href="http://blog.stackoverflow.com/2012/02/survey-results/">strongly correlated with salary</a></li>
+      </ul>
+    </article>
   </slide>
 
   <slide class="segue dark quote nobackground">
@@ -251,39 +257,63 @@ webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")</pre>
     </article>
   </slide>
 
+  <slide>
+    <hgroup>
+      <h2>Functions</h2>
+      <h3>Declaration and usage</h3>
+    </hgroup>
+    <article class="vcenter smaller">
+      <pre class="prettyprint" data-lang="python">
+def multiply_by_2(n):
+    """This is a so called docstring"""
+    return n*2</pre>
+
+      <h3>Running it</h3>
+      <pre class="prettyprint" data-lang="python">
+our_list = []
+for i in range(10):
+    our_list.append(multiply_by_2(i))
+print(our_list)</pre>
+
+      <p>
+        A shorter way to write it is:
+      </p>
+
+      <pre class="prettyprint" data-lang="python">
+print([multiply_by_2(i) for i in range(10)])   # This is called a list comprehension</pre>
+
+      <pre data-lang="output">
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</pre>
+
+    </article>
+  </slide>
 
   <!-- TODO: Use this slide? -->
   <!-- TODO: Split it into several slides -->
   <slide>
     <hgroup>
-      <h2>Fibonacci</h2>
+      <h2>Functions</h2>
+      <h3>A fibonacci example</h3>
     </hgroup>
-    <article class="vcenter small">
-      <h3>Iterative</h3>
+    <article class="vcenter smaller">
       <pre class="prettyprint" data-lang="python">
 def fibonacci(n):
-    """Returns the n'th Fibonacci number"""
+    """Returns the n'th Fibonacci number using iteration"""
     i = 1
     j = 0
     for _ in range(n):
         tmp = i
         i += j
-        j = tmp + i
+        j = tmp
     return i</pre>
 
-
-      <h3>Recursion</h3>
       <pre class="prettyprint" data-lang="python">
 def fibonacci(n):
+    """Returns the n'th Fibonacci number using recursion"""
     if n &lt; 2:
         return 1
     else:
         return fibonacci(n-1) + fibonacci(n-2)</pre>
-
-      <h3>Print first 10</h3>
-      <pre class="prettyprint" data-lang="python">
-for i in range(10):
-      print(fibonacci(i))</pre>
     </article>
   </slide>
 
