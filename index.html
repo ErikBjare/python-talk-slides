@@ -23,13 +23,12 @@ title: Python Introduction
       <ul class="build">
         <li>It's fun</li>
         <li>It will make you a better programmer</li>
-        <li>How many languages you know is <a href="http://blog.stackoverflow.com/2012/02/survey-results/">strongly correlated with salary</a></li>
+        <li>How many languages you know <a href="http://blog.stackoverflow.com/2012/02/survey-results/">correlates with salary</a></li>
       </ul>
     </article>
   </slide>
 
   <slide class="segue dark quote nobackground">
-    <aside class="gdbar right bottom"><img src="images/google_developers_icon_128.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <q>
         I'll begin with a shockingly controversial statement: programming languages vary in power.
@@ -111,24 +110,6 @@ title: Python Introduction
 
   <slide>
     <hgroup>
-      <h2>Slide with Bullets that Build</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <p>A list where items build:</p>
-      <ul class="build">
-        <li>Pressing 'h' highlights code snippets</li>
-        <li>Pressing 'p' toggles speaker notes (if they're on the current slide)</li>
-        <li>Pressing 'f' toggles fullscreen viewing</li>
-        <li>Pressing 'w' toggles widescreen</li>
-        <li>Pressing 'o' toggles overview mode</li>
-        <li>Pressing 'ESC' toggles off these goodies</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
       <h2>Hello World!</h2>
     </hgroup>
     <article class="vcenter">
@@ -155,6 +136,7 @@ public class Program {
   <slide class="fill nobackground" style="background: url(https://upload.wikimedia.org/wikipedia/commons/3/34/Double-Rainbow.jpg); background-size: 100% 100%">
     <hgroup>
       <h2>Lists</h2>
+      <h3>How do they work?</h3>
     </hgroup>
     <article class="vcenter">
       <pre class="prettyprint" data-lang="python">
@@ -167,6 +149,36 @@ if our_list[0] == our_list[1] == "rainbow":
 
       <pre data-lang="output">
 Double rainbow all across the slide!</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Lists</h2>
+      <h3>What happens if you turn a string into a list?</h3>
+    </hgroup>
+    <article class="vcenter smaller">
+      <pre class="prettyprint" data-lang="python">
+our_string = "The cake is a lie"
+our_list = list(our_string)
+print(our_list)</pre>
+
+      <pre data-lang="output">
+['T', 'h', 'e', ' ', 'c', 'a', 'k', 'e', ' ', 'i', 's', ' ', 'a', ' ', 'l', 'i', 'e']
+</pre>
+
+      <p>What this does is essentially looping though the string, one character at a time, and then putting each element in the list. Rarely very useful.</p>
+
+      <p>What is useful is splitting the string whenever a certain character appears</p>
+
+      <pre class="prettyprint" data-lang="python">
+our_string = "The cake is a lie"
+our_list = our_string.split(" ")
+print(our_list)</pre>
+
+      <pre data-lang="output">
+['The', 'cake', 'is', 'a', 'lie']
+</pre>
     </article>
   </slide>
 
@@ -438,7 +450,17 @@ fluffy.bark()</pre>
         <li>List, set and dict-comprehensions</li>
         <li>Generators</li>
         <li>Lambdas</li>
+        <li>Properties</li>
+        <li>Metaclasses</li>
       </ul>
+
+      <br>
+      <br>
+      <br>
+
+      <p style="line-height: 1.5em;">
+        These are less important than the other things I've gone through, but they can be very useful so if you want to do even more with less Python you should check them out.
+      </p>
 
     </article>
   </slide>
