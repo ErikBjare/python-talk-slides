@@ -411,7 +411,7 @@ class Animal:
 class Dog(Animal):
     def __init__(self, name, loud=False):
         Animal.__init__(self, name)   # Run the Animal constructor on self before continuing
-        self.loud = True
+        self.loud = loud
 
     def bark(self):
         if self.loud:
