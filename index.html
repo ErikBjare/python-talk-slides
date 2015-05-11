@@ -6,7 +6,7 @@ title: Python Introduction
 <slides class="layout-widescreen">
 
   <slide class="title-slide segue nobackground">
-    <aside class="gdbar"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"></aside>
+    <aside class="gdbar"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python logo"></aside>
     <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
@@ -21,8 +21,11 @@ title: Python Introduction
     </hgroup>
     <article>
       <ul class="build">
-        <li>It's fun</li>
-        <li>It will make you a better programmer</li>
+        <li>It's fun (if you pick a fun language)</li>
+        <li>It will make you a better programmer (if it's not similar to something you already know)</li>
+        <li>Different languages are good at different things, knowing a few lets you pick the right one for the right job</li>
+        <li>As you get older, you will be less and less willing to learn a new language</li>
+        <li>It prevents you from getting stuck to a language</li>
         <li>How many languages you know <a href="http://blog.stackoverflow.com/2012/02/survey-results/">correlates with salary</a></li>
       </ul>
     </article>
@@ -35,7 +38,7 @@ title: Python Introduction
       </q>
       <div class="author">
         Paul Graham<br>
-        in <a href="http://paulgraham.com/avg.html">Beating the Averages</a>
+        in <a href="http://paulgraham.com/avg.html" style="color: #99F;">Beating the Averages</a>
       </div>
     </article>
   </slide>
@@ -89,21 +92,17 @@ title: Python Introduction
     </hgroup>
     <article>
       <!-- TODO: Replace with a logo-fest -->
-      <h3>Companies</h3>
       <ul>
         <li>Google</li>
         <li>CERN</li>
         <li>NASA</li>
-      </ul>
-
-      <h3>Products & Services</h3>
-      <ul>
         <li>YouTube</li>
         <li>Dropbox</li>
         <li>Reddit</li>
         <li>Duolingo</li>
         <li>Hipmunk</li>
         <li>BitTorrent (first implementation)</li>
+        <li>And many more...</li>
       </ul>
     </article>
   </slide>
@@ -223,53 +222,35 @@ NaNaNaNaNaNaNaNaNaNa Batman!</pre>
     </article>
   </slide>
 
-  <!-- TODO: Complete slide -->
   <slide>
     <hgroup>
       <h2>Dictionaries</h2>
       <h3>Also known as hashmaps</h3>
     </hgroup>
-    <article class="vcenter">
+    <article class="vcenter smaller">
       <pre class="prettyprint" data-lang="python">
 our_dictionary = {"some key": "some value"}
-our_dictionary["some key"] = "some other value"</pre>
+print(our_dictionary["some key"])             # You can fetch using the bracket syntax
+
+our_dictionary["some key"] = "another value"  # It's easy to create an entry
+print(our_dictionary.pop("some key"))         # Removes and returns the value with the given key
+assert len(our_dictionary) == 0               # Our dictionary is now empty
+
+our_dictionary[1] = "one"                     # We can even have keys of different types in the same dict
+our_dictionary["one"] = 1                     
+print(our_dictionary)                         # A dict like this might be useful for... something.
+
+s = 1
+for i in range(101):
+    s = our_dictionary[s]
+print(s)
+</pre>
 
       <pre data-lang="output">
-This slide is obviously not completed</pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Batteries included</h2>
-      <h3>Need something? Python probably has it</h3>
-    </hgroup>
-    <article>
-
-      <pre class="prettyprint" data-lang="python">
-import webbrowser
-webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")</pre>
-
-      <p>
-        If you run this, the exact same thing will happen as if you click <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">this</a>.
-      </p>
-
-      <p>
-        The Python standard library includes excellent (and easy to use) modules for:
-        <ul>
-          <li>Date and time</li>
-          <li>Functional programming</li>
-          <li>Data compression and archiving</li>
-          <li>Concurrent execution</li>
-        </ul>
-      </p>
-
-      <p>
-        ...and <a href="https://docs.python.org/3/library/">much more</a>.
-      </p>
-
-      <p>
-        ...not enough? A lot more is available from the <a href="https://pypi.python.org/pypi">Python Package Index</a>.
+some value
+another value
+{1: 'one', 'one': 1}
+one</pre>
     </article>
   </slide>
 
@@ -304,8 +285,6 @@ print([multiply_by_2(i) for i in range(10)])   # This is called a list comprehen
     </article>
   </slide>
 
-  <!-- TODO: Use this slide? -->
-  <!-- TODO: Split it into several slides -->
   <slide>
     <hgroup>
       <h2>Functions</h2>
@@ -354,7 +333,7 @@ print("Done! Ran " + str(i) + " times!")</pre>
     </article>
   </slide>
 
-  <!-- TODO: This is optional, not really useful for beginners -->
+  <!-- This is optional, not really useful for beginners -->
   <slide>
     <hgroup>
       <h2>Functions</h2>
@@ -371,7 +350,8 @@ def logging_decorator(f):
 
 def f():
     print("Running function")
-f = logging_decorator(f)</pre>
+f = logging_decorator(f)   # Passes a function into another function which 
+                           # returns a new function which is assigned to f</pre>
 
       <p>
         The last part can be written with the fancy decorator syntax as:
@@ -422,8 +402,43 @@ fluffy.bark()</pre>
   </slide>
 
   <slide>
+    <hgroup>
+      <h2>Batteries included</h2>
+      <h3>Need something? Python probably has it</h3>
+    </hgroup>
+    <article>
+
+      <pre class="prettyprint" data-lang="python">
+import webbrowser
+webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")</pre>
+
+      <p>
+        If you run this, the exact same thing will happen as if you click <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">this</a>.
+      </p>
+
+      <p>
+        The Python standard library includes excellent (and easy to use) modules for:
+      </p>
+
+      <ul>
+          <li>Date and time</li>
+          <li>Functional programming</li>
+          <li>Data compression and archiving</li>
+          <li>Concurrent execution</li>
+      </ul>
+
+      <p>
+        ...and <a href="https://docs.python.org/3/library/">much more</a>.
+      </p>
+
+      <p>
+        ...not enough? A lot more is available from the <a href="https://pypi.python.org/pypi">Python Package Index</a>.
+    </article>
+  </slide>
+
+  <slide>
     <article class="flexbox vcenter">
-      <span><img src="https://imgs.xkcd.com/comics/python.png"></span>
+      <span><img src="https://imgs.xkcd.com/comics/python.png" alt="xkcd Python comic"></span>
     </article>
     <footer class="source">source: <a href="http://xkcd.com/353/">http://xkcd.com/353/</a></footer>
   </slide>
@@ -488,22 +503,21 @@ fluffy.bark()</pre>
         You can open all the links in the online version of the slides at:
       </p>
       <p>
-        <a href="http://erikbjare.github.io/python-talk-slides/">erikbjare.github.io/python-talk-slides/</a>
+        <a href="http://erik.bjareholt.com/python-talk-slides/">erik.bjareholt.com/python-talk-slides/</a>
       </p>
     </article>
   </slide>
 
   <slide class="thank-you-slide segue nobackground">
     <article class="flexbox vleft auto-fadein">
-      <h2>print("Thank you for listening!")</h2>
-      <br>
-      <br>
-      <br>
       <p>
-        You can view the slides (and open all the links in them) at:
+        <h2>print("Thank you for listening!")</h2>
         <br>
         <br>
-        <a style="color: #00F" href="http://erikbjare.github.io/python-talk-slides/">erikbjare.github.io/python-talk-slides/</a>
+        You can view the slides (and open all the links) at:
+        <br>
+        <br>
+        <a style="color: #0FF" href="http://erik.bjareholt.com/python-talk-slides/">erik.bjareholt.com/python-talk-slides/</a>
       </p>
     </article>
     <p class="auto-fadein" data-config-contact>
