@@ -5,7 +5,7 @@ var SLIDE_CONFIG = {
     subtitle: 'A short introduction',
     eventInfo: {
       title: 'Code@LTH Meetup',
-      date: '19th of May 2015'
+      date: '12th of May 2015'
     },
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
