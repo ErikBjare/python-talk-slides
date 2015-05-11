@@ -49,6 +49,7 @@ title: Python Introduction
         <li>It's the language I know the best because I loved it since day one (if I do this well enough, I hope you will too)</li>
         <li>Easy to learn</li>
         <li>Fast to write</li>
+        <li>Many common tools are in the standard library</li>
         <li>Rich (but not overwhelming) set of syntax features</li>
         <li>Great documentation (nothing like the Java documentation)</li>
         <li>It makes programming fun (compared to Java)</li>
@@ -105,6 +106,32 @@ title: Python Introduction
         <li>Hipmunk</li>
         <li>BitTorrent (first implementation)</li>
       </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>How did it come to be?</h2>
+    </hgroup>
+    <article>
+      <p>
+        Creator: Guido van Rossum
+      </p>
+
+      <ul>
+        <li>
+          Created
+          <a href="https://en.wikipedia.org/wiki/ABC_(programming_language)">ABC</a>
+          , a programming language designed for learning
+        </li>
+        <li>Created Python, designed to be a scripting language with syntax inspired by ABC</a></li>
+        <li>Worked at Google</li>
+        <li>Now works at Dropbox</li>
+      </ul>
+
+      <a href="https://en.wikipedia.org/wiki/History_of_Python">
+        More on Wikipedia
+      </a>
     </article>
   </slide>
 
@@ -214,8 +241,8 @@ print(primes)
     </hgroup>
     <article class="vcenter">
       <pre class="prettyprint" data-lang="python">
-word = "Narwhal"                      # They are awesome
-part_of_word = word[0:2]              # Can be shortened `word[:2]`
+word = "Narwhal"                   # They are awesome
+part_of_word = word[0:2]           # This is called slicing, can be shortened `word[:2]`
 print(part_of_word*10 + " Batman!")</pre>
 
       <pre data-lang="output">
@@ -232,44 +259,12 @@ NaNaNaNaNaNaNaNaNaNa Batman!</pre>
     <article class="vcenter">
       <pre class="prettyprint" data-lang="python">
 our_dictionary = {"some key": "some value"}
-our_dictionary["some key"] = "some other value"</pre>
+our_dictionary["some key"] = "some other value"
+our_dictionary[1] = "a value using a number as a key"
+our_dictionary.pop(1)     # Removes the item with key 1 from the dictionary</pre>
 
       <pre data-lang="output">
 This slide is obviously not completed</pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Batteries included</h2>
-      <h3>Need something? Python probably has it</h3>
-    </hgroup>
-    <article>
-
-      <pre class="prettyprint" data-lang="python">
-import webbrowser
-webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")</pre>
-
-      <p>
-        If you run this, the exact same thing will happen as if you click <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">this</a>.
-      </p>
-
-      <p>
-        The Python standard library includes excellent (and easy to use) modules for:
-        <ul>
-          <li>Date and time</li>
-          <li>Functional programming</li>
-          <li>Data compression and archiving</li>
-          <li>Concurrent execution</li>
-        </ul>
-      </p>
-
-      <p>
-        ...and <a href="https://docs.python.org/3/library/">much more</a>.
-      </p>
-
-      <p>
-        ...not enough? A lot more is available from the <a href="https://pypi.python.org/pypi">Python Package Index</a>.
     </article>
   </slide>
 
@@ -422,6 +417,40 @@ fluffy.bark()</pre>
   </slide>
 
   <slide>
+    <hgroup>
+      <h2>Batteries included</h2>
+      <h3>Need something? Python probably has it</h3>
+    </hgroup>
+    <article>
+
+      <pre class="prettyprint" data-lang="python">
+import webbrowser
+webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")</pre>
+
+      <p>
+        If you run this, the exact same thing will happen as if you click <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">this</a>.
+      </p>
+
+      <p>
+        The Python standard library includes excellent (and easy to use) modules for:
+        <ul>
+          <li>Date and time</li>
+          <li>Functional programming</li>
+          <li>Data compression and archiving</li>
+          <li>Concurrent execution</li>
+        </ul>
+      </p>
+
+      <p>
+        ...and <a href="https://docs.python.org/3/library/">much more</a>.
+      </p>
+
+      <p>
+        ...not enough? A lot more is available from the <a href="https://pypi.python.org/pypi">Python Package Index</a>.
+    </article>
+  </slide>
+
+  <slide>
     <article class="flexbox vcenter">
       <span><img src="https://imgs.xkcd.com/comics/python.png"></span>
     </article>
@@ -452,6 +481,7 @@ fluffy.bark()</pre>
         <li>Lambdas</li>
         <li>Properties</li>
         <li>Metaclasses</li>
+        <li>Unit testing (the <a href="https://docs.python.org/3/library/unittest.html">'unittest' package</a>)</li>
       </ul>
 
       <br>
@@ -488,7 +518,7 @@ fluffy.bark()</pre>
         You can open all the links in the online version of the slides at:
       </p>
       <p>
-        <a href="http://erikbjare.github.io/python-talk-slides/">erikbjare.github.io/python-talk-slides/</a>
+        <a href="http://erik.bjareholt.com/python-talk-slides/">erik.bjareholt.com/python-talk-slides/</a>
       </p>
     </article>
   </slide>
@@ -503,7 +533,7 @@ fluffy.bark()</pre>
         You can view the slides (and open all the links in them) at:
         <br>
         <br>
-        <a style="color: #00F" href="http://erikbjare.github.io/python-talk-slides/">erikbjare.github.io/python-talk-slides/</a>
+        <a style="color: #00F" href="http://erik.bjareholt.com/python-talk-slides/">erik.bjareholt.com/python-talk-slides/</a>
       </p>
     </article>
     <p class="auto-fadein" data-config-contact>
